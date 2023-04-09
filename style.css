@@ -1,0 +1,416 @@
+/*//////////Стили //////////////////*/
+@font-face {
+    font-family: "Creepy";
+    src: url("Fonts/Creepy.woff") format("woff"), url("Fonts/Creepy.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Lunacy";
+    src: url("Fonts/Lunacy.woff") format("woff"), url("Fonts/Lunacy.woff2") format("woff2")
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    background: url(./fon/merch-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: none;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+
+
+}
+
+.gameOver {
+    height: 100vh;
+    width: 100vw;
+    background: url(./fon/maxresdefault\ \(3\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: none;
+    align-items: center;
+
+
+}
+
+.gameOverText {
+    padding-top: 100px;
+    display: none;
+
+    opacity: 80%;
+
+
+
+    text-align: center;
+    align-items: center;
+    color: rgb(134, 7, 7);
+    font-family: Creepy, serif;
+    font-size: 150px;
+    text-shadow: 1px 1px 2px rgb(199, 22, 22), 0 0 1em blue;
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    visibility: visible !important;
+}
+
+.gameOver1 {
+    opacity: 80%;
+    height: 200px;
+    width: 1500px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    color: rgb(134, 65, 65);
+    font-family: Creepy, serif;
+    font-size: 150px;
+
+
+    animation-name: hatch;
+    -webkit-animation-name: hatch;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -webkit-transform-origin: 50% 100%;
+
+    visibility: visible !important;
+    cursor: pointer;
+}
+
+.gameOver1:hover {
+    font-size: 180px;
+    transition: .9s;
+
+    text-shadow: 1px 1px 2px rgb(199, 22, 22), 0 0 1em blue;
+}
+
+.gameOverText:hover {
+    font-size: 180px;
+    transition: .2s;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgb(199, 22, 22), 0 0 1em blue;
+}
+
+/* FIELD */
+.memory-game {
+    width: 600px;
+    height: 600px;
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+
+/* CARD */
+.memory-card {
+    width: 19%;
+    height: 24%;
+    margin: 10px;
+    position: relative;
+    box-shadow: 1px 1px 2px 3px white;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    border-radius: 5px;
+    background: black;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.sideA {
+    display: flex;
+    width: 900px;
+    height: 680px;
+    flex-direction: column;
+
+}
+
+.main {
+    margin-top: 20px;
+    width: 190px;
+    height: 60px;
+    background: url(img/main1.gif) no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.scorpion {
+    margin-top: 50px;
+    width: 250px;
+    height: 450px;
+}
+
+.sideB {
+    display: flex;
+    width: 200px;
+    height: 100px;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.text {
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-family: Lunacy, monospace;
+    font-size: 60px;
+    text-shadow: 1px 1px 2px rgb(177, 69, 69), 0 0 1em yellow;
+}
+
+.score {
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-family: Lunacy, monospace;
+    font-size: 60px;
+    text-shadow: 1px 1px 2px rgb(177, 69, 69), 0 0 1em yellow;
+
+}
+
+/************************** */
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    background-image: url(./fon/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+
+}
+
+
+
+
+/* 
+.startGame{
+width: 400px;
+height: 150px;
+    margin-top: 200px;
+    margin-left: 50px;   
+    color: rgb(0, 89, 255);
+    font-family: Creepy, serif;
+    font-size: 150px;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px 20px rgb(24, 24, 187);
+  }
+*/
+
+/* .startGame:hover{
+   
+        box-shadow: 1px 1px 80px 40px rgb(94, 94, 221);
+        transition: all 2s ease;
+         animation: bounce 1s;
+ } */
+
+
+
+.finishGame {
+
+    background: url(fon/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+
+
+    background-size: cover;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    60%,
+    100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-150px);
+        transform: translateY(-150px);
+    }
+
+    80% {
+        transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes hatch {
+    0% {
+        transform: rotate(0deg) scaleY(0.6);
+    }
+
+    20% {
+        transform: rotate(-2deg) scaleY(1.05);
+    }
+
+    35% {
+        transform: rotate(2deg) scaleY(1);
+    }
+
+    50% {
+        transform: rotate(-2deg);
+    }
+
+    65% {
+        transform: rotate(1deg);
+    }
+
+    80% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes hatch {
+    0% {
+        -webkit-transform: rotate(0deg) scaleY(0.6);
+    }
+
+    20% {
+        -webkit-transform: rotate(-2deg) scaleY(1.05);
+    }
+
+    35% {
+        -webkit-transform: rotate(2deg) scaleY(1);
+    }
+
+    50% {
+        -webkit-transform: rotate(-2deg);
+    }
+
+    65% {
+        -webkit-transform: rotate(1deg);
+    }
+
+    80% {
+        -webkit-transform: rotate(-1deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    80% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;
+    }
+
+    60% {
+        -webkit-transform: scale(1.1);
+    }
+
+    80% {
+        -webkit-transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
